@@ -1,0 +1,10 @@
+node_modules/
+.env
+dist/
+build/
+*.log
+.DS_Store
+
+# Uploaded ANPR media - keep the folder structure, ignore actual uploads
+server/uploads/anpr/*
+!server/uploads/anpr/.gitkeep

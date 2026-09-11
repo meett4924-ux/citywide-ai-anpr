@@ -1,0 +1,28 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
+import { UIProvider } from './context/UIContext.jsx'
+import { ToastProvider } from './context/ToastContext.jsx'
+import { DemoScenarioProvider } from './context/DemoScenarioContext.jsx'
+import ToastViewport from './components/ui/ToastViewport.jsx'
+import 'leaflet/dist/leaflet.css'
+import './index.css'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <BrowserRouter>
+      <ToastProvider>
+        <AuthProvider>
+          <UIProvider>
+            <DemoScenarioProvider>
+              <App />
+              <ToastViewport />
+            </DemoScenarioProvider>
+          </UIProvider>
+        </AuthProvider>
+      </ToastProvider>
+    </BrowserRouter>
+  </React.StrictMode>,
+)
